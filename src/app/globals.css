@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  /* Bright, cheerful grocery colors */
+  --color-primary: #84cc16; /* Lime 500 */
+  --color-primary-light: #a3e635; /* Lime 400 */
+  --color-primary-dark: #65a30d; /* Lime 600 */
+  --color-accent: #f97316; /* Orange 500 */
+  --color-accent-light: #fb923c; /* Orange 400 */
+  --color-accent-dark: #ea580c; /* Orange 600 */
+  
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: #ffffff; /* Pure white */
+    --foreground: #1f2937; /* Dark Grey */
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply transition-colors duration-300;
+    font-family: var(--font-inter), sans-serif;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .glass {
+    @apply bg-white/80 backdrop-blur-lg border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)];
+  }
+}
